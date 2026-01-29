@@ -1,4 +1,5 @@
-﻿namespace BlazingPizza;
+﻿using System.Globalization;
+namespace BlazingPizza;
 
 /// <summary>
 /// Represents a pre-configured template for a pizza a user can order
@@ -15,5 +16,9 @@ public class PizzaSpecial
 
     public string ImageUrl { get; set; }
 
-    public string GetFormattedBasePrice() => BasePrice.ToString("0.00");
+    public string GetFormattedBasePrice() =>
+        BasePrice.ToString(
+            "C",
+            CultureInfo.GetCultureInfo("en-US") 
+        );
 }

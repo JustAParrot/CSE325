@@ -15,10 +15,6 @@ public class Order
 
     public decimal GetTotalPrice() => Pizzas.Sum(p => p.GetTotalPrice());
 
-    public string GetFormattedTotalPrice() =>
-        GetTotalPrice().ToString(
-            "C",
-            CultureInfo.GetCultureInfo("en-US") 
-        );
+    public string GetFormattedTotalPrice() =>GetTotalPrice().ToString("C",CultureInfo.GetCultureInfo("en-US") );
 
 }

@@ -198,12 +198,6 @@ form {
         line-height: 2rem;
     }
 
-.price::before {
-    content: '£';
-    font-weight: 300;
-    font-size: 1.2rem;
-    margin-right: 0.2rem;
-}
 
 .sidebar {
     background-color: #2b2b2b;
@@ -249,12 +243,6 @@ form {
         font-weight: 700;
         font-size: 1.5rem;
     }
-
-        .order-total .total-price::before {
-            content: '£';
-            font-weight: 300;
-            margin: 0 0.1rem 0 0.4rem;
-        }
 
     .order-total .btn {
         margin-left: auto;
@@ -306,12 +294,6 @@ form {
 .item-price {
     font-weight: 500;
 }
-
-    .item-price::before {
-        content: '£';
-        font-weight: 100;
-        margin-right: 0.3rem;
-    }
 
 .delete-item {
     position: absolute;
@@ -454,9 +436,6 @@ form {
     font-size: 0.8rem;
 }
 
-.dialog .topping-price::before {
-    content: '£';
-}
 
 .delete-topping {
     background: none;
@@ -755,4 +734,14 @@ input[type=range] {
     100% {
         transform: translateX(500px);
     }
+}
+
+/* 🔥 Currency override – remove hardcoded symbols */
+span.price::before,
+span.price:before,
+span.total-price::before,
+span.total-price:before,
+.dialog .price::before,
+.dialog .price:before {
+    content: "" !important;
 }
